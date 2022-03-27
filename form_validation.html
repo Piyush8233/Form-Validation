@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form </title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        form {
+            background-color: gray;
+            width: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 10px;
+            color: white;
+            font-size: 20px;
+        }
+
+        input {
+            margin: 10px;
+            width: 190px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" onsumbit="return false">
+        <label for="firstname">First Name </label>
+        <input type="text" name="fname" id="firstname">
+        <label for="lastname">Last name </label>
+        <input type="text" name="lname" id="lastname">
+        <label for="mob">Mobile </label>
+        <input type="tel" name="mobile" id="mob">
+        <label for="Email">Email </label>
+        <input type="email" name="email" id="Email">
+        <label for="Pass">Password </label>
+        <input type="password" name="password" id="pass">
+
+        <label for="fpass">Confirm </label>
+        <input type="password" name="fpassword" id="fpass">
+
+        <input type="button" name="" value="Submit Now" onclick="saveData()">
+    </form>
+
+
+    <script>
+        let a = document.getElementById('firstname');
+        let b = document.getElementById('lastname');
+        let c = document.getElementById('mob');
+        let d = document.getElementById('Email');
+        let e = document.getElementById('pass');
+        let f = document.getElementById('fpass');
+
+        function saveData() {
+            if (e.value == f.value) {
+                localStorage.setItem('firstname', a.value);
+                localStorage.setItem('lastname', b.value);
+                localStorage.setItem('mob', c.value);
+                localStorage.setItem('Email', d.value);
+                localStorage.setItem('pass', e.value);
+                localStorage.setItem('fpass', f.value);
+                window.open('Show_details.html', '_self');
+                // window.location.href="welcome.html";
+            }
+            else{
+                alert("Please enter the right password");
+                return false;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
